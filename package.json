@@ -13,22 +13,22 @@
     "react-static": "./bin/react-static"
   },
   "scripts": {
-    "build": "rimraf lib && rimraf node_modules/react-static && babel src --out-dir lib --ignore '**/__tests__/*' && yarn prepGitignore",
+    "build": "rimraf lib && rimraf node_modules/react-static && babel src --out-dir lib --ignore '**/__tests__/*' && npm run prepGitignore",
     "start": "rimraf lib && rimraf node_modules/react-static && babel -w src --out-dir lib --ignore '**/__tests__/*'",
     "postpublish": "git push --tags",
-    "prepublishOnly": "yarn build && yarn test",
-    "publishNext": "yarn publish --tag next",
+    "prepublishOnly": "npm run build && npm run test",
+    "publishNext": "npm publish --tag next",
     "prepGitignore": "node scripts/prepGitignore.js",
-    "startDocs": "cd www && yarn start",
-    "buildDocs": "cd www && yarn && yarn build",
-    "buildDocsProd": "yarn build && yarn link && cd www && yarn && yarn link react-static && yarn build",
+    "startDocs": "cd www && npm run start",
+    "buildDocs": "cd www && npm install && npm run build",
+    "buildDocsProd": "npm run build && npm link && cd www && npm install && npm link react-static && npm run build",
     "serveDocs": "serve www/dist -p 3000",
-    "test": "yarn unitTest && yarn lint && yarn run test-sample-build",
+    "test": "npm run unitTest && npm run lint && npm run test-sample-build",
     "lint": "eslint src examples test",
-    "unitTest": "NODE_ENV=test yarn jest src",
-    "unitTestWatch": "NODE_ENV=test yarn jest src --watch",
-    "test-large-build": "yarn build && (cd test/stress-test-routes && yarn && rm -rf node_modules/react-static && ln -s -f ../../../ ./node_modules/react-static && ../../bin/react-static build)",
-    "test-sample-build": "yarn build && (cd test/minimal-website && yarn && rm -rf node_modules/react-static && ln -s -f ../../../ ./node_modules/react-static && ../../bin/react-static build)"
+    "unitTest": "NODE_ENV=test jest src",
+    "unitTestWatch": "NODE_ENV=test jest src --watch",
+    "test-large-build": "npm run build && (cd test/stress-test-routes && npm install && rm -rf node_modules/react-static && ln -s -f ../../../ ./node_modules/react-static && ../../bin/react-static build)",
+    "test-sample-build": "npm run build && (cd test/minimal-website && npm install && rm -rf node_modules/react-static && ln -s -f ../../../ ./node_modules/react-static && ../../bin/react-static build)"
   },
   "dependencies": {
     "@types/react": "^16.0.18",
