@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../src/static/__mocks__/static.config.mock.js"],"names":["entry"],"mappings":";;;;;kBAAe;AACbA,SAAO;AADM,C","file":"static.config.mock.js","sourcesContent":["export default {\n  entry: 'path/to/entry/index.js',\n}\n"]}

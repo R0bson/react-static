@@ -1,0 +1,1 @@
+{"version":3,"sources":["../../../../src/static/__mocks__/pages/404.js"],"names":[],"mappings":";;;;;;AAAA;;;;;;AACA;;kBAEe;AAAA,SACb;AAAA;AAAA;AACE;AAAA;AAAA;AAAA;AAAA;AADF,GADa;AAAA,C","file":"404.js","sourcesContent":["import React from 'react'\n//\n\nexport default () => (\n  <div>\n    <h1>404 - Oh no's! We couldn't find that page :(</h1>\n  </div>\n)\n"]}
