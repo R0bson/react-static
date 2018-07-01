@@ -223,7 +223,7 @@ const buildConfigFromPath = configPath => {
   const filename = path.resolve(configPath)
   delete require.cache[filename]
   try {
-    const config = require(configPath).default
+    const config = require(filename).default
     return buildConfigation(config)
   } catch (err) {
     console.error(err)
